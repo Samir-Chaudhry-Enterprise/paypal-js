@@ -36,8 +36,31 @@ export interface PayPalCardFieldsStyleOptions {
     "-webkit-transition"?: string;
 }
 
+/**
+ * Data returned when CardFields payment is approved
+ */
 export type CardFieldsOnApproveData = {
+    /** The order ID for the approved payment */
     orderID: string;
+    /**
+     * Liability shift indicator for 3D Secure authentication.
+     * Indicates the outcome of the issuer's authentication.
+     */
+    liabilityShift?: "NO" | "POSSIBLE" | "UNKNOWN";
+    /**
+     * Whether liability has been shifted to the card issuer.
+     */
+    liabilityShifted?: boolean;
+    /**
+     * The reason for the authentication result.
+     * Provides additional context about the 3D Secure authentication process.
+     */
+    authenticationReason?: string;
+    /**
+     * The status of the 3D Secure authentication.
+     * Indicates whether authentication was successful, failed, or unavailable.
+     */
+    authenticationStatus?: string;
 };
 
 export interface PayPalCardFieldsInputEvents {
