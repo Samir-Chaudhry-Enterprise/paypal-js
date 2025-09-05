@@ -38,6 +38,23 @@ export interface PayPalCardFieldsStyleOptions {
 
 export type CardFieldsOnApproveData = {
     orderID: string;
+    authenticationResponse?: {
+        liability_shift?: "NO" | "POSSIBLE" | "UNKNOWN";
+        three_d_secure?: {
+            authentication_status?:
+                | "Y"
+                | "N"
+                | "U"
+                | "A"
+                | "C"
+                | "R"
+                | "D"
+                | "I";
+            enrollment_status?: "Y" | "N" | "U" | "B";
+        };
+        authentication_flow?: unknown;
+        exemption_details?: unknown;
+    };
 };
 
 export interface PayPalCardFieldsInputEvents {
