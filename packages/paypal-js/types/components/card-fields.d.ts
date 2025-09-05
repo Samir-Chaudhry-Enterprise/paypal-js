@@ -49,7 +49,6 @@ export type CardFieldsOnApproveData = {
     liabilityShift?: "NO" | "POSSIBLE" | "UNKNOWN";
     /**
      * Whether liability has been shifted to the card issuer.
-     * True when the card issuer accepts liability for fraudulent transactions.
      */
     liabilityShifted?: boolean;
     /**
